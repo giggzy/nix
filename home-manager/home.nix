@@ -18,11 +18,20 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    ripgrep
+
+    # python
     python3
-    neovim
+
+    # rust
     cargo
     rustc
+
+    # neovim
+    neovim
+
+    # cli tools
+    fzf
+    ripgrep
     zoxide
 
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -73,16 +82,30 @@
   };
 
   # Let Home Manager install and manage itself.
-  #programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
   programs.git = {
     enable = true;
     userName = "Gabriel Farrell";
     userEmail = "gabriel.farrell@gmail.com";
   };
+
+
+  # move to own file?
   programs.zsh = {
     enable = true;
     autocd = true;
     enableCompletion = true;
     enableAutosuggestions = true;
   };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
 }
