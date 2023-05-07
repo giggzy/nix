@@ -12,3 +12,9 @@ Run the installer
 ```sh
 nix-shell '<home-manager>' -A install
 ```
+
+## Usage
+
+Some good [docs](https://nix-community.github.io/home-manager/index.html#ch-usage).
+
+
