@@ -23,10 +23,24 @@ in
   # environment.
   home.packages = with pkgs; [
 
+    # terminal tools
+    alacritty
+    zellij
+    tmux
+    direnv
+
     # python
     python3
+    python3Packages.black
+    python3Packages.ipython
+    python3Packages.pyflakes
+    python3Packages.pygments
+    python3Packages.pyls-isort
+    # python3Packages.pylsp-mypy
+    # python3Packages.pytest
+    # python3Packages.python-lsp-server
 
-    # rust
+   # rust
     cargo
     rustc
 
@@ -37,6 +51,8 @@ in
     fzf
     ripgrep
     zoxide
+    exa
+    tree
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -58,18 +74,7 @@ in
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
+  home.file = import ./files.nix;
 
   # You can also manage environment variables but you will have to manually
   # source
@@ -98,8 +103,23 @@ in
   programs.zsh = {
     enable = true;
     autocd = true;
-    enableCompletion = true;
+    dotDir = ".config/zsh";
     enableAutosuggestions = true;
+    enableCompletion = true;
+    shellAliases = {
+      sl = "exa";
+      ls = "exa";
+      l = "exa -l";
+      la = "exa -la";
+      # ip = "ip --color=auto";
+      vim = "nvim";
+    };
+
+    initExtra = ''
+      bindkey '^ ' autosuggest-accept
+      # vim binding mode
+      bindkey -v
+    '';
   };
 
   programs.fzf = {
@@ -112,4 +132,18 @@ in
     enableZshIntegration = true;
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.zellij = {
+    enable = true;
+    # enableZshIntegration = true;
+  };
 }
