@@ -4,5 +4,6 @@
       source = ./config/zellij;
       recursive = true;
   };
+  ".config/starship.toml".source = ./config/starship.toml
 }
  

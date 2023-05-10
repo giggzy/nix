@@ -3,6 +3,7 @@
 let
   username = builtins.getEnv "USER";
   homeDirectory = builtins.getEnv "HOME";
+  pkgsUnstable = import <nixpkgs-unstable> {};
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -45,7 +46,7 @@ in
     rustc
 
     # neovim
-    neovim
+    pkgsUnstable.neovim # install newer version
 
     # cli tools
     fzf
