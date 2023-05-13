@@ -54,6 +54,15 @@ in
     zoxide
     exa
     tree
+    fd  # find alternative
+    sd  # simpler than sed
+    du-dust # disk usage
+    dogdns  # alternative to dig (DNS)
+    xh   # curl/wget
+    duf  # df alternative
+    ncdu # du alternative
+    bat  # cat alternative
+
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -87,9 +96,9 @@ in
   #  /etc/profiles/per-user/gabrielfarrell/etc/profile.d/hm-session-vars.sh
   #
   # if you don't want to manage your shell through Home Manager.
-  home.sessionVariables = {
+  #home.sessionVariables = {
     # EDITOR = "emacs";
-  };
+  #};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true; # This is failing for me in wsl on windows right now?
