@@ -92,11 +92,16 @@ in
   };
 
   # Let Home Manager install and manage itself.
-  # programs.home-manager.enable = true;
+  programs.home-manager.enable = true; # This is failing for me in wsl on windows right now?
   programs.git = {
     enable = true;
     userName = "Gabriel Farrell";
     userEmail = "gabriel.farrell@gmail.com";
+
+    extraConfig = {
+      init.defaultBranch = "main";
+      color.ui = true;
+    };
   };
 
 
@@ -107,21 +112,35 @@ in
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
     enableCompletion = true;
-    shellAliases = {
-      sl = "exa";
-      ls = "exa";
-      l = "exa -l";
-      la = "exa -la";
-      # ip = "ip --color=auto";
-      vim = "nvim";
-    };
 
     initExtra = ''
       bindkey '^ ' autosuggest-accept
       # vim binding mode
       bindkey -v
+      
+      # functions
+      ${builtins.readFile ./zsh/functions.zsh}
     '';
+
+    shellAliases = import ./zsh/aliases.zsh
+    sessionVariables = { # TODO: own file?
+      LANG = "en_US.UTF-8";
+
+      EDITOR = "nvim";
+      VISUAL = "$EDITOR";
+    }
   };
+
+  # TODO: Add Neovim configuration
+  # programs.neovim = {
+  #   enable = true;
+  #   viAlias = true;
+  #   vimAlias = true;
+  #   
+  #   # plugins = with pkgs.vimPlugins; [
+  #   #   vim-nix
+  #   # ];
+  # };
 
   programs.fzf = {
     enable = true;
