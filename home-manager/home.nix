@@ -122,13 +122,13 @@ in
       ${builtins.readFile ./zsh/functions.zsh}
     '';
 
-    shellAliases = import ./zsh/aliases.zsh
+    shellAliases = import ./zsh/aliases.zsh;
     sessionVariables = { # TODO: own file?
       LANG = "en_US.UTF-8";
 
       EDITOR = "nvim";
       VISUAL = "$EDITOR";
-    }
+    };
   };
 
   # TODO: Add Neovim configuration
