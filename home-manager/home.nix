@@ -32,6 +32,7 @@ in
     zellij
     tmux
     direnv
+    fish
 
     ##############################################
     # Languages support
@@ -139,6 +140,7 @@ in
   };
 
   # TODO: Add Neovim configuration
+
   # programs.neovim = {
   #   enable = true;
   #   viAlias = true;
@@ -148,6 +150,10 @@ in
   #   #   vim-nix
   #   # ];
   # };
+
+  # TODO: some neovim config I'm accumulating
+  # set clipboard=autoselect  -- visual mode highlights get copied to system clipboard
+
 
   programs.fzf = {
     enable = true;
