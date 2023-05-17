@@ -1,0 +1,3 @@
+[submodule "home-manager/config/nvim_apps/astro"]
+	path = home-manager/config/nvim_apps/astro
+	url = https://github.com/AstroNvim/AstroNvim
