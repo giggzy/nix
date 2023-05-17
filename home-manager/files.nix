@@ -5,5 +5,6 @@
       recursive = true;
   };
   ".config/starship.toml".source = ./config/starship.toml;
+  ".config/nvim_apps".source = ./config/nvim_apps;
 }
  
