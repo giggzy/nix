@@ -3,7 +3,7 @@
 let
   username = builtins.getEnv "USER";
   homeDirectory = builtins.getEnv "HOME";
-  pkgsUnstable = import <nixpkgs-unstable> {};
+  pkgsUnstable = import <nixpkgs-unstable> { };
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -81,19 +81,12 @@ in
   # plain files is through 'home.file'.
   home.file = import ./files.nix;
 
-  # You can also manage environment variables but you will have to manually
-  # source
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/gabrielfarrell/etc/profile.d/hm-session-vars.sh
-  #
-  # if you don't want to manage your shell through Home Manager.
-  #home.sessionVariables = {
-    # EDITOR = "emacs";
-  #};
+  home.sessionVariables = {
+    LANG = "en_US.UTF-8";
+    EDITOR = "nvim";
+    VISUAL = "$EDITOR";
+    NVIM_APPNAME = "nvim_apps/astro";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true; # This is failing for me in wsl on windows right now?
@@ -117,6 +110,7 @@ in
     enableAutosuggestions = true;
     enableCompletion = true;
 
+
     initExtra = ''
       bindkey '^ ' autosuggest-accept
       # vim binding mode
@@ -127,12 +121,15 @@ in
     '';
 
     shellAliases = import ./zsh/aliases.zsh;
-    sessionVariables = { # TODO: own file?
-      LANG = "en_US.UTF-8";
 
-      EDITOR = "nvim";
-      VISUAL = "$EDITOR";
-    };
+    # sessionVariables = {
+    #   # TODO: own file?
+    #   LANG = "en_US.UTF-8";
+    #
+    #   EDITOR = "nvim";
+    #   VISUAL = "$EDITOR";
+    #   NVIM_APPNAME = "nvim_apps/astro";
+    # };
   };
 
   # TODO: Add Neovim configuration
