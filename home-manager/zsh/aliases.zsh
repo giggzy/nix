@@ -1,8 +1,12 @@
 {
+  # File listings
   sl = "exa";
   ls = "exa";
   l = "exa -l";
   la = "exa -la";
+
+  # Directory navigation
+  cd = "z";
 
   # Neovim shell aliases
   avim = "NVIM_APPNAME=nvim_apps/astro nvim";
