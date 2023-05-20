@@ -4,19 +4,6 @@ return {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       -- customize the dashboard header
-      -- opts.section.header.val = {
-      --   " █████  ███████ ████████ ██████   ██████",
-      --   "██   ██ ██         ██    ██   ██ ██    ██",
-      --   "███████ ███████    ██    ██████  ██    ██",
-      --   "██   ██      ██    ██    ██   ██ ██    ██",
-      --   "██   ██ ███████    ██    ██   ██  ██████",
-      --   " ",
-      --   "    ███    ██ ██    ██ ██ ███    ███",
-      --   "    ████   ██ ██    ██ ██ ████  ████",
-      --   "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-      --   "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-      --   "    ██   ████   ████   ██ ██      ██",
-      -- }
       opts.section.header.val = {
         "╔╗ ╔╗╔═══╗╔╗   ╔══╗ ╔═══╗╔════╗",
         "║║ ║║║╔═╗║║║   ╚╣╠╝ ║╔══╝║╔╗╔╗║",
@@ -32,15 +19,33 @@ return {
   -- { "max397574/better-escape.nvim", enabled = false },
   --
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   config = function(plugin, opts)
-  --     require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-  --     -- add more custom luasnip configuration such as filetype extend or custom snippets
-  --     local luasnip = require "luasnip"
-  --     luasnip.filetype_extend("javascript", { "javascriptreact" })
-  --   end,
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+      -- add more custom luasnip configuration such as filetype extend or custom snippets
+      local luasnip = require "luasnip"
+      luasnip.filetype_extend("javascript", { "javascriptreact" })
+      luasnip.filetype_extend("typescript", { "typescriptreact" })
+    end,
+  },
+  --[[ NOT WORKING TRYING TO CUSTOMIZE CMP PLUGIN
+  {
+    "hrsh7th/nvim-cmp",
+    config = function(plugin, opts)
+      require "plugins.configs.nvim-cmp"(plugin, opts) -- include the default astronvim config that calls the setup call
+      -- add more custom nvim-cmp configuration such as custom snippets
+      local cmp = require "cmp"
+      cmp.setup.buffer {
+        sources = {
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "buffer" },
+        },
+      }
+    end,
+  }
+  --]]
   -- {
   --   "windwp/nvim-autopairs",
   --   config = function(plugin, opts)
