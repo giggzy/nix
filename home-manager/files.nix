@@ -5,8 +5,13 @@
     recursive = true;
   };
   ".config/starship.toml".source = ./config/starship.toml;
+  # NVIM CONFIGURATION
   ".config/nvim_apps/astro" = {
     source = ./config/nvim_apps/astro;
+    recursive = true;
+  };
+  ".config/nvim_apps/nvchad" = {
+    source = ./config/nvim_apps/nvchad;
     recursive = true;
   };
   ".config/nvim_apps/astronvim/lua/user" = {
