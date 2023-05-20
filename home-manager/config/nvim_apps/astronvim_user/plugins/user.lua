@@ -9,4 +9,9 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "imsnif/kdl.vim",
+    -- lazy load on kdl files
+    ft = "kdl",
+  }
 }
