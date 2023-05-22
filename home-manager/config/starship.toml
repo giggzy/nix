@@ -1,7 +1,23 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$all"""
+#right_format = """$git_branch$git_status$cmd_duration$directory"""
+
+
+add_newline = true
+
+[time]
+disabled = true
+use_12hr = true
+format = '[ $time]($style) '
+style = 'bold italic bright-black'
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
 [bun]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [c]
@@ -14,15 +30,18 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[⏱ $duration]($style)\]'
 
 [cobol]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [conda]
 format = '\[[$symbol$environment]($style)\]'
 
 [crystal]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [daml]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [dart]
@@ -35,6 +54,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$context]($style)\]'
 
 [dotnet]
+disabled = true
 format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
 
 [elixir]
@@ -47,9 +67,11 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [fennel]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [fossil_branch]
+disabled = true
 format = '\[[$symbol$branch]($style)\]'
 
 [gcloud]
@@ -68,24 +90,28 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [guix_shell]
+disabled = true
 format = '\[[$symbol]($style)\]'
 
 [haskell]
 format = '\[[$symbol($version)]($style)\]'
 
 [haxe]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [helm]
 format = '\[[$symbol($version)]($style)\]'
 
 [hg_branch]
+disabled = true
 format = '\[[$symbol$branch]($style)\]'
 
 [java]
 format = '\[[$symbol($version)]($style)\]'
 
 [julia]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [kotlin]
@@ -101,9 +127,11 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[$symbol[$ram( | $swap)]($style)\]'
 
 [meson]
+disabled = true
 format = '\[[$symbol$project]($style)\]'
 
 [nim]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [nix_shell]
@@ -113,9 +141,11 @@ format = '\[[$symbol$state( \($name\))]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [ocaml]
+disabled = true
 format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
 
 [opa]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [openstack]
@@ -134,21 +164,26 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [pijul_channel]
+disabled = true
 format = '\[[$symbol$channel]($style)\]'
 
 [pulumi]
+disabled = true
 format = '\[[$symbol$stack]($style)\]'
 
 [purescript]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [python]
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 
 [raku]
+disabled = true
 format = '\[[$symbol($version-$vm_version)]($style)\]'
 
 [red]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [ruby]
@@ -161,10 +196,13 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [spack]
+disabled = true
 format = '\[[$symbol$environment]($style)\]'
 
 [sudo]
-format = '\[[as $symbol]\]'
+disabled = false
+#symbol = '👩‍💻 '
+format = '\[[as $symbol]($style)\]'
 
 [swift]
 format = '\[[$symbol($version)]($style)\]'
@@ -172,17 +210,18 @@ format = '\[[$symbol($version)]($style)\]'
 [terraform]
 format = '\[[$symbol$workspace]($style)\]'
 
-[time]
-format = '\[[$time]($style)\]'
-
 [username]
+disabled = true
 format = '\[[$user]($style)\]'
 
 [vagrant]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [vlang]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
 
 [zig]
+disabled = true
 format = '\[[$symbol($version)]($style)\]'
