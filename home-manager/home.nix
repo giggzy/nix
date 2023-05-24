@@ -22,7 +22,7 @@ in
     ##############################################
 
     alacritty
-    zellij
+    pkgsUnstable.zellij
     tmux
     direnv
     fish
@@ -49,6 +49,21 @@ in
 
     # lua
     luarocks
+
+    # javascript
+    nodejs
+
+    # C and friends
+    gcc
+
+    # go and friends
+    go
+
+    ##############################################
+    # GUI Tools
+    ##############################################
+    firefox
+    google-chrome
 
     ##############################################
     # neovim
@@ -166,11 +181,6 @@ in
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
-  };
-
-  programs.zellij = {
-    enable = true;
-    # enableZshIntegration = true;
   };
 
   programs.atuin = {
