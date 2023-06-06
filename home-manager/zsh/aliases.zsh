@@ -8,6 +8,9 @@
   # Directory navigation
   cd = "z";
 
+  # better cat
+  cat = "bat";
+
   # Neovim shell aliases
   avim = "NVIM_APPNAME=nvim_apps/astro nvim";
 

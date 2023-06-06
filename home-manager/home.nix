@@ -21,6 +21,7 @@ in
     # terminal tools
     ##############################################
 
+    iterm2  # Mac Only?
     alacritty
     pkgsUnstable.zellij
     tmux

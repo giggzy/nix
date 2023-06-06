@@ -2,8 +2,7 @@
 
 ## Installing
 
-Add the nix-channel for Home-Mangager.
-
+#### Add the nix-channel for Home-Mangager.
 ```sh
 $ nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 $ nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
@@ -11,11 +10,23 @@ $ nix-channel --update
 
 ```
 
-Run the installer
+#### Link the bootstrapping config file
 
+Create any missing directories manually
+
+```sh
+ln -s `pwd`/home.nix ~/.config/home-manager/
+```
+
+#### Run the installer
 ```sh
 nix-shell '<home-manager>' -A install
 ```
+
+Note an alias *xx* is created that switches to the new configuration and initializses the zsh.
+
+[ ] Install nerdfonts
+
 
 ## Usage
 
