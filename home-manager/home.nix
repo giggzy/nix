@@ -44,8 +44,14 @@ in
     # python3Packages.python-lsp-server
 
     # rust
-    cargo
-    rustc
+    # pkgsUnstable.cargo
+    # pkgsUnstable.rustc
+    # pkgsUnstable.rustfmt
+    # pkgsUnstable.rust-analyzer
+    # pkgsUnstable.clippy
+    pkgsUnstable.rustup
+    #cargo
+    #rustc
 
     # lua
     luarocks
@@ -57,7 +63,12 @@ in
     gcc
 
     # go and friends
-    go
+    pkgsUnstable.go
+
+    ##############################################
+    # dev tools
+    ##############################################
+    sqlite
 
     ##############################################
     # GUI Tools
@@ -75,11 +86,18 @@ in
     ##############################################
     # cli tools
     ##############################################
+    curl
+    xclip
+    wget
+    htop
+    zip
+    unzip
     fzf
     ripgrep
     zoxide
     exa
     tree
+    lazygit
     fd # find alternative
     sd # simpler than sed
     du-dust # disk usage
