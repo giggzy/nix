@@ -21,7 +21,7 @@ in
     # terminal tools
     ##############################################
 
-    iterm2  # Mac Only?
+    iterm2 # Mac Only?
     alacritty
     pkgsUnstable.zellij
     tmux
@@ -31,18 +31,25 @@ in
     starship
 
     ##############################################
+    # MCIT
+    ##############################################
+    awscli2
+
+    ##############################################
     # Languages support
     ##############################################
     # python
     python3
+    python3Packages.pip
     python3Packages.black
     python3Packages.ipython
     python3Packages.pyflakes
     python3Packages.pygments
     python3Packages.pyls-isort
     # python3Packages.pylsp-mypy
-    # python3Packages.pytest
-    # python3Packages.python-lsp-server
+    python3Packages.pytest
+    python3Packages.python-lsp-server
+    python3Packages.oracledb
 
     # rust
     # pkgsUnstable.cargo
@@ -50,7 +57,9 @@ in
     # pkgsUnstable.rustfmt
     # pkgsUnstable.rust-analyzer
     # pkgsUnstable.clippy
+    libiconv
     pkgsUnstable.rustup
+    cargo-nextest
     #cargo
     #rustc
 
@@ -91,10 +100,12 @@ in
     xclip
     wget
     htop
+    btop # visual system viewer
     zip
     unzip
     fzf
     ripgrep
+    ack
     zoxide
     exa
     tree
@@ -109,6 +120,8 @@ in
     bat # cat alternative
     atuin # shell history tool (DB, shared storage over hosts)
     bottom
+    broot # tree alternative
+    tokei # stats on a code base
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -152,6 +165,10 @@ in
       
       # functions
       ${builtins.readFile ./zsh/functions.zsh}
+
+      # Setup PATH
+      export PATH=/opt/homebrew/bin:$PATH
+      export PATH=/opt/homebrew/sbin:$PATH
     '';
 
     shellAliases = import ./zsh/aliases.zsh;
