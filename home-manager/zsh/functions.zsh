@@ -31,3 +31,26 @@ function nvims_add() {
   mkdir $appdir
   echo "App $appname created"  
 }
+
+
+# Chooser for AWS Profile
+function aws_profile_chooser() {
+  local AWS_CONFIG_FILE=~/.aws/config
+  if [ ! -f $AWS_CONFIG_FILE ]; then
+    echo "No Profiles configured" >&2
+    exit 1
+  fi
+
+  # grab profile lines and cut out the profile name, need to remove the trailing ']'
+  local profiles=($(grep profile $AWS_CONFIG_FILE | cut -d ' ' -f2 | sed 's/]//'))
+
+  # display options
+  profile=$(printf "%s\n" "${profiles[@]}" | fzf --prompt="Choose AWS Profile" --height=~50% --layout=reverse --border --exit-0)
+  # set selected option
+  if [[ -z $profile ]]; then
+    echo "Nothing selected"
+    return 0
+  fi
+
+  export AWS_PROFILE=$profile
+}
