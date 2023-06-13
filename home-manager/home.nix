@@ -122,6 +122,7 @@ in
     bottom
     broot # tree alternative
     tokei # stats on a code base
+    tldr
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -156,7 +157,7 @@ in
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
     enableCompletion = true;
-
+    enableSyntaxHighlighting = true;
 
     initExtra = ''
       bindkey '^ ' autosuggest-accept
