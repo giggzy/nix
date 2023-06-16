@@ -169,6 +169,12 @@ in
       # functions
       ${builtins.readFile ./zsh/functions.zsh}
 
+      # completion
+      autoload bashcompinit                                                                                                                                                                                                                                                                            │
+      bashcompinit                                                                                                                                                                                                                                                                                     │
+      complete -C aws_completer aws
+      # what other tools do I want completion from?
+
       # Setup PATH
       export PATH=/opt/homebrew/bin:$PATH
       export PATH=/opt/homebrew/sbin:$PATH
