@@ -4,7 +4,7 @@ The lua based fork of vim.
 
 ## ZSH convenience aliases and functions
 
-- [aliases](./zsh/aliases.zsh?L14)
+- [aliases](./zsh/aliases.zsh?#L14)
 - [functions](./zsh/functions.zsh)
 
 ## Astronvim User Customization
