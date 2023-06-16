@@ -189,6 +189,15 @@ in
 
     shellAliases = import ./zsh/aliases.zsh;
 
+    prezto = {
+      enable = true;
+      pmodules = [
+        "completion"
+        "git"
+      ];
+      editor.keymap = "vi";
+    };
+
     # sessionVariables = {
     #   # TODO: own file?
     #   LANG = "en_US.UTF-8";
