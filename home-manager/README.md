@@ -72,3 +72,7 @@ brew tap jakehilborn/jakehilborn && brew install displayplacer
 ```sh
 displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1512x982 hz:120 color_depth:8 enabled:true scaling:on origin:(0,0) degree:0" "id:64B0B9CB-DBC0-4B40-9067-003180CA6686 res:3008x1692 hz:60 color_depth:7 enabled:true scaling:on origin:(3204,-761) degree:0" "id:9D804D51-C2D4-4706-AF4F-8F1A78CDF19D res:1692x3008 hz:60 color_depth:8 enabled:true scaling:on origin:(1512,-761) degree:90"
 ```
+
+# Links
+
+[My Neovim Documentation](./Neovim.md)
