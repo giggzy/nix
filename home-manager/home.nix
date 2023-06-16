@@ -176,8 +176,15 @@ in
       # what other tools do I want completion from?
 
       # Setup PATH
+
+      # Homebrew
       export PATH=/opt/homebrew/bin:$PATH
       export PATH=/opt/homebrew/sbin:$PATH
+
+      # PyEnv
+      export PYENV_ROOT="$HOME/.pyenv"
+      command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+      eval "$(pyenv init -)"
     '';
 
     shellAliases = import ./zsh/aliases.zsh;
