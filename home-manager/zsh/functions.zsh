@@ -37,20 +37,19 @@ function nvims_add() {
 function aws_profile_chooser() {
   local AWS_CONFIG_FILE=~/.aws/config
   if [ ! -f $AWS_CONFIG_FILE ]; then
-    echo "No Profiles configured" >&2
-    exit 1
+    echo "No Profiles configured"
+    return 0
   fi
 
   # grab profile lines and cut out the profile name, need to remove the trailing ']'
   local profiles=($(grep profile $AWS_CONFIG_FILE | cut -d ' ' -f2 | sed 's/]//'))
 
   # display options
-  profile=$(printf "%s\n" "${profiles[@]}" | fzf --prompt="Choose AWS Profile" --height=~50% --layout=reverse --border --exit-0)
-  # set selected option
+  profile=$(printf "%s\n" "${profiles[@]}" | fzf --prompt="󰸏 Choose AWS Profile " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $profile ]]; then
     echo "Nothing selected"
     return 0
+  else
+    export AWS_PROFILE=$profile
   fi
-
-  export AWS_PROFILE=$profile
 }
