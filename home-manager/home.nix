@@ -175,8 +175,9 @@ in
       # completion
       autoload bashcompinit                                                                                                                                                                                                                                                                            │
       bashcompinit                                                                                                                                                                                                                                                                                     │
+
       complete -C aws_completer aws
-      # what other tools do I want completion from?
+      complete -o nospace -C terraform terraform
 
       # Setup PATH
 
