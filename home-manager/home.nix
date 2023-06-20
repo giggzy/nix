@@ -70,6 +70,7 @@ in
 
     # javascript
     nodejs
+    yarn
 
     # C and friends
     gcc
@@ -93,12 +94,14 @@ in
     ##############################################
     pkgsUnstable.neovim # install newer version
 
-    helix
+    helix # editor with intresting modal model
+    hexyl # hex viewer
 
     ##############################################
     # cli tools
     ##############################################
     curl
+    jq
     xclip
     wget
     htop
