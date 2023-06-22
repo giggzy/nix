@@ -12,6 +12,7 @@ in
   home.homeDirectory = homeDirectory;
 
   home.stateVersion = "22.05"; # Please read the comment before changing.
+  #home.stateVersion = "23.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -21,7 +22,7 @@ in
     # terminal tools
     ##############################################
 
-    iterm2 # Mac Only?
+    #iterm2 # Mac Only?
     alacritty
     pkgsUnstable.zellij
     tmux
@@ -34,8 +35,8 @@ in
     # MCIT
     ##############################################
     awscli2
-    terraform
-    terraform-ls
+    pkgsUnstable.terraform
+    pkgsUnstable.terraform-ls
 
     ##############################################
     # Languages support
@@ -145,8 +146,8 @@ in
   programs.home-manager.enable = true; # This is failing for me in wsl on windows right now?
   programs.git = {
     enable = true;
-    userName = "Gabriel Farrell";
-    userEmail = "gabriel.farrell@gmail.com";
+    userName = "Farrell, Gabriel";
+    userEmail = "Gabriel.Farrell@nyulangone.org";
 
     extraConfig = {
       init.defaultBranch = "main";
