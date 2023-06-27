@@ -15,6 +15,7 @@ style = 'bold italic bright-black'
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+force_display = true
 
 [c]
 format = '\[[$symbol($version(-$name))]($style)\]'
