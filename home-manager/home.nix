@@ -97,6 +97,8 @@ in
 
     helix # editor with intresting modal model
     hexyl # hex viewer
+    glow # markdown viewer
+    frogmouth # markdown viewer
 
     ##############################################
     # cli tools
