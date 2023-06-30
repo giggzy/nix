@@ -180,11 +180,14 @@ in
       ${builtins.readFile ./zsh/functions.zsh}
 
       # completion
-      autoload bashcompinit                                                                                                                                                                                                                                                                            │
-      bashcompinit                                                                                                                                                                                                                                                                                     │
+      autoload -U +X bashcompinit && bashcompinit
+      autoload -Uz compinit && compinit
 
       complete -C aws_completer aws
       complete -o nospace -C terraform terraform
+
+      # Setup CDPATH
+      cdpath=(. ~ ~/workspace ~/workspace/repos ~/workspace/giggzy_github .. )
 
       # Setup PATH
 
