@@ -78,6 +78,9 @@ in
 
     # go and friends
     pkgsUnstable.go
+    gopls
+    delve
+
 
     ##############################################
     # dev tools
@@ -131,6 +134,7 @@ in
     broot # tree alternative
     tokei # stats on a code base
     tldr
+    visidata # spreadsheet for csv, json, etc
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
