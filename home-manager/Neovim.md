@@ -17,3 +17,10 @@ ln -s ./config/nvim_apps/astronvim_user ~/.config/nvim_apps/astronvim/lua/user
 ```
 
 [ ] Decide to move bootstrapping to _home.nix_?
+
+## Submodule management
+
+```bash
+git submodule add <remote_url> <destination_folder>     # Add a submodule
+git submodule update --recursive --remote               # Update all submodules:
+```
