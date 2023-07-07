@@ -35,8 +35,14 @@ in
     # MCIT
     ##############################################
     awscli2
+    go-task # task runner alternative to make (transplant-mcit uses this)
+
     pkgsUnstable.terraform
     pkgsUnstable.terraform-ls
+
+    # Ansible
+    pkgsUnstable.ansible
+    pkgsUnstable.ansible-lint
 
     ##############################################
     # Languages support
@@ -53,6 +59,9 @@ in
     python3Packages.pytest
     python3Packages.python-lsp-server
     python3Packages.oracledb
+    #python3Packages.pylsp-mypy
+    mypy
+    pipenv
 
     # rust
     # pkgsUnstable.cargo
@@ -135,6 +144,7 @@ in
     tokei # stats on a code base
     tldr
     visidata # spreadsheet for csv, json, etc
+    postgresql
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
