@@ -7,6 +7,19 @@ keybinds clear-defaults=false {
     
     // Ctrl q is too easy to hit by accident.
     unbind "Ctrl q"
+
+    // Ctrl p and Ctrl n are used in neovim for completion.
+    unbind "Ctrl p"
+    unbind "Ctrl n"
+
+    // Ctrl o is used for neovim navigation.
+    unbind "Ctrl o"
+
+    normal {
+        bind "Alt p" { SwitchToMode "Pane"; }
+        bind "Alt n" { SwitchToMode "Resize"; }
+        bind "Alt o" { SwitchToMode "Session"; }
+    }
 }
 
 
