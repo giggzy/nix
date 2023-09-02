@@ -63,6 +63,8 @@ in
     #python3Packages.pylsp-mypy
     mypy
     pipenv
+    pre-commit
+    poetry
 
     # rust
     # pkgsUnstable.cargo
@@ -102,6 +104,7 @@ in
     ##############################################
     #firefox
     #google-chrome
+    sqlitebrowser
 
     ##############################################
     # neovim
@@ -128,9 +131,10 @@ in
     ripgrep
     ack
     zoxide
-    exa
+    exa # ls alternative
     tree
-    lazygit
+    lazygit # git TUI Tool
+    lazydocker # Docker TUI Tool
     fd # find alternative
     sd # simpler than sed
     du-dust # disk usage
@@ -146,6 +150,8 @@ in
     tldr
     visidata # spreadsheet for csv, json, etc
     postgresql
+    pgcli # postgresql cli with autocomplete
+    graphviz # visualization tool
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
