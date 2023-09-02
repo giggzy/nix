@@ -34,7 +34,8 @@ in
     ##############################################
     # MCIT
     ##############################################
-    awscli2
+    pkgsUnstable.awscli2
+    ssm-session-manager-plugin
     go-task # task runner alternative to make (transplant-mcit uses this)
 
     pkgsUnstable.terraform

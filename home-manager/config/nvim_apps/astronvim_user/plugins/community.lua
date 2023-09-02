@@ -10,6 +10,7 @@ return {
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.python" },
   -- ERROR: The following are not installing some dependencies, npm error but not sure why
   -- { import = "astrocommunity.pack.yaml" },
   -- { import = "astrocommunity.pack.bash" },
