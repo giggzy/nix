@@ -35,4 +35,23 @@ return {
     "ckipp01/nvim-jenkinsfile-linter", 
     requires = { "nvim-lua/plenary.nvim" }
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filterd_items = {
+          hide_by_name = {
+            "__pycache__", -- This is not working for me
+          },
+        }
+      },
+    },
+    filesystem = {
+      filterd_items = {
+        hide_by_name = {
+          "__pycache__", -- This is not working for me
+        },
+      }
+    },
+  }
 }
