@@ -13,10 +13,11 @@
 
   # Neovim shell aliases
   avim = "NVIM_APPNAME=nvim_apps/astro nvim";
-  lvim = "NVIM_APPNAME=nvim_apps/LunarVim nvim";
+  luvim = "NVIM_APPNAME=nvim_apps/LunarVim nvim";
+  lvim = "NVIM_APPNAME=nvim_apps/lazynvim nvim";
 
   # TODO: fix broken config
-  nvim-lazy="NVIM_APPNAME=LazyVim nvim"; 
+  nvim-lazy="NVIM_APPNAME=lazynvim nvim"; 
   nvim-kick="NVIM_APPNAME=kickstart nvim";
   nvim-chad="NVIM_APPNAME=NvChad nvim";
   nvim-astro="NVIM_APPNAME=AstroNvim nvim";

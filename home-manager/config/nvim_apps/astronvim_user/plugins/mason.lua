@@ -9,6 +9,7 @@ return {
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         -- "lua_ls",
       })
+      opts.automatic_installation = { exclude = {"pyright"} } -- pyright is still getting auto installed?
     end,
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
