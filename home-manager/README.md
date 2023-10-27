@@ -76,3 +76,18 @@ displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1512x982 hz:120 color
 # Links
 
 [My Neovim Documentation](./Neovim.md)
+
+## Troubleshooting and Tips
+
+#### MacOS updates breaks nix
+
+[Reddit Tread About](https://www.reddit.com/r/Nix/comments/11ynxa5/every_macos_update_needs_me_to_rerun_the_nix/) has a discussion. Starting up the nix-daemon worked for me.
+
+```sh
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; 
+then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+```
+May add this to my zshrc.
+
