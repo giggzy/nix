@@ -30,6 +30,7 @@ in
     fish
     zsh
     starship
+    tailspin  # colorize tail
 
     ##############################################
     # MCIT
@@ -161,10 +162,10 @@ in
 
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
-    EDITOR = "lvim";
+    EDITOR = "vim";
     VISUAL = "$EDITOR";
     NVIM_APPNAME = "nvim_apps/astro";
-    FCEDIT = "lvim";
+    FCEDIT = "vim";
   };
 
   # Let Home Manager install and manage itself.
@@ -178,6 +179,11 @@ in
       init.defaultBranch = "main";
       color.ui = true;
     };
+    ignores =  [
+      ".DS_Store"
+      ".direnv"
+      ".envrc"
+    ];
   };
 
 
@@ -223,6 +229,11 @@ in
       export PYENV_ROOT="$HOME/.pyenv"
       command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
       eval "$(pyenv init -)"
+
+      # Nix
+      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+        . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+      fi
     '';
 
     shellAliases = import ./zsh/aliases.zsh;
@@ -230,8 +241,13 @@ in
     prezto = {
       enable = true;
       pmodules = [
-        "completion"
+        "environment"
+        "terminal"
+        "editor"
+        "docker"
+        "homebrew"
         "git"
+        "completion"
       ];
       editor.keymap = "vi";
     };
@@ -285,5 +301,8 @@ in
   programs.atuin = {
     enable = true;
     enableZshIntegration = true;
+  };
+  programs.alacritty = {
+    enable = true;
   };
 }

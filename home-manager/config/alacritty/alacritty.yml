@@ -1,1 +1,27 @@
 # TODO: Configure Alacritty
+#
+
+env:
+  TERM: xterm-256color
+
+window:
+  decorations: buttonless
+  opacity: 0.8
+  dynamic_padding: false
+  padding:
+    x: 14
+    y: 10
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font"
+    style: Medium
+  italic:
+    family: "JetBrainsMono Nerd Font"
+    style: Medium Italic
+  bold:
+    family: "JetBrainsMono Nerd Font"
+    style: Heavy
+  bold_italic:
+    family: "JetBrainsMono Nerd Font"
+    style: Heavy Italic
+  size: 14.0
