@@ -178,6 +178,8 @@ in
     extraConfig = {
       init.defaultBranch = "main";
       color.ui = true;
+      core.editor = "vim";
+      merge.conflictStyle = "zdiff3";
     };
     ignores =  [
       ".DS_Store"

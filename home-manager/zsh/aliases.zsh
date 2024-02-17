@@ -14,7 +14,7 @@
   # Neovim shell aliases
   avim = "NVIM_APPNAME=nvim_apps/astro nvim";
   luvim = "NVIM_APPNAME=nvim_apps/LunarVim nvim";
-  lvim = "NVIM_APPNAME=nvim_apps/lazynvim nvim";
+  lvim = "NVIM_APPNAME=nvim_apps/lazynvim /opt/homebrew/bin/nvim";
 
   # TODO: fix broken config
   nvim-lazy="NVIM_APPNAME=lazynvim nvim"; 
