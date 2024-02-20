@@ -154,6 +154,7 @@ in
     postgresql
     pgcli # postgresql cli with autocomplete
     graphviz # visualization tool
+    delta  # git diff tool
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -179,7 +180,13 @@ in
       init.defaultBranch = "main";
       color.ui = true;
       core.editor = "vim";
+      core.pager = "delta";
       merge.conflictStyle = "zdiff3";
+      delta.navigate = true;
+      interactive.diffFilter = "delta --color-only";
+      diff.colorMoved = "default";
+      commit.verbose = true;
+      diff.algorithm = "histogram";
     };
     ignores =  [
       ".DS_Store"
