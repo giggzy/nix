@@ -33,6 +33,21 @@ Note an alias _xx_ is created that switches to the new configuration and initial
 
 Some good [docs](https://nix-community.github.io/home-manager/index.html#ch-usage).
 
+## Change Configuration
+
+This git repo has my configuration for nix to apply any edits run `xx` which is a shortcut
+
+```
+xx = "home-manager switch && reload";
+```
+
+## Upgrade Packages
+
+```sh
+nix-channel --update
+home-manager switch # I use shortcut xx
+```
+
 ## Remapping keys
 
 On windows I've used the _powertoys_ utility which has a keyboard remapper to map **CAPSLOCK** to **ESC**.
