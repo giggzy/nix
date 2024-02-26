@@ -1,10 +1,10 @@
 keybinds clear-defaults=false {
     // My intention is to control keybindings for zellij so as to not conflict with my neovim keybindings configuation.
     // Ctrl p and Ctrl n for example are used in neovim for completion.
-    
+
     // Just using the lock functionality for now and see if that suits me.
     // Ctrl g
-    
+
     // Ctrl q is too easy to hit by accident.
     unbind "Ctrl q"
 
