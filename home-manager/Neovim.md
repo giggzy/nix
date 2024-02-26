@@ -24,3 +24,10 @@ ln -s ./config/nvim_apps/astronvim_user ~/.config/nvim_apps/astronvim/lua/user
 git submodule add <remote_url> <destination_folder>     # Add a submodule
 git submodule update --recursive --remote               # Update all submodules:
 ```
+
+## Install Treesitter Parser
+There are Neovim commands for managing  treesitter parsers.
+
+```vim
+:TSInstall <parser>     # Install a parser
+```
