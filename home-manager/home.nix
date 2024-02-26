@@ -151,7 +151,7 @@ in
     tokei # stats on a code base
     tldr
     visidata # spreadsheet for csv, json, etc
-    postgresql
+    postgresql_15 # It was picking up an older version of postgresql but this got me 15
     pgcli # postgresql cli with autocomplete
     graphviz # visualization tool
     delta  # git diff tool
