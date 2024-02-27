@@ -145,7 +145,7 @@ in
     duf # df alternative
     ncdu # du alternative
     bat # cat alternative
-    atuin # shell history tool (DB, shared storage over hosts)
+    pkgsUnstable.atuin # shell history tool (DB, shared storage over hosts)
     bottom
     broot # tree alternative
     tokei # stats on a code base
@@ -310,6 +310,7 @@ in
   programs.atuin = {
     enable = true;
     enableZshIntegration = true;
+    package = pkgsUnstable.atuin;
   };
   programs.alacritty = {
     enable = true;
