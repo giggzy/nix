@@ -163,10 +163,10 @@ in
 
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
-    EDITOR = "vim";
+    EDITOR = "lvim";
     VISUAL = "$EDITOR";
     NVIM_APPNAME = "nvim_apps/astro";
-    FCEDIT = "vim";
+    FCEDIT = "lvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -179,7 +179,7 @@ in
     extraConfig = {
       init.defaultBranch = "main";
       color.ui = true;
-      core.editor = "vim";
+      core.editor = "lvim";
       core.pager = "delta";
       merge.conflictStyle = "zdiff3";
       delta.navigate = true;
@@ -214,7 +214,7 @@ in
       autoload -Uz edit-command-line
       zle -N edit-command-line
       bindkey -M vicmd v edit-command-line
-      
+
       # functions
       ${builtins.readFile ./zsh/functions.zsh}
 
@@ -229,6 +229,7 @@ in
       cdpath=(. ~ ~/workspace ~/workspace/repos ~/workspace/giggzy_github .. )
 
       # Setup PATH
+      export PATH=$HOME/.local/bin:$PATH
 
       # Homebrew
       export PATH=/opt/homebrew/bin:$PATH
@@ -277,7 +278,7 @@ in
   #   enable = true;
   #   viAlias = true;
   #   vimAlias = true;
-  #   
+  #
   #   # plugins = with pkgs.vimPlugins; [
   #   #   vim-nix
   #   # ];
