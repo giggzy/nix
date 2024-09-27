@@ -135,7 +135,7 @@ in
     zoxide
     exa # ls alternative
     tree
-    lazygit # git TUI Tool
+    pkgsUnstable.lazygit # git TUI Tool
     lazydocker # Docker TUI Tool
     fd # find alternative
     sd # simpler than sed
@@ -163,10 +163,10 @@ in
 
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
-    EDITOR = "lvim";
+    EDITOR = "nvim";
     VISUAL = "$EDITOR";
-    NVIM_APPNAME = "nvim_apps/astro";
-    FCEDIT = "lvim";
+    NVIM_APPNAME = "nvim_apps/lazynvim";
+    FCEDIT = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -179,7 +179,7 @@ in
     extraConfig = {
       init.defaultBranch = "main";
       color.ui = true;
-      core.editor = "lvim";
+      core.editor = "nvim";
       core.pager = "delta";
       merge.conflictStyle = "zdiff3";
       delta.navigate = true;

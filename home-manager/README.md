@@ -2,12 +2,12 @@
 
 ## Installing
 
-#### Add the nix-channel for Home-Mangager.
+### Add the nix-channel for Home-Mangager
 
 ```sh
-$ nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-$ nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
-$ nix-channel --update
+ nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+ nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
+ nix-channel --update
 
 ```
 
@@ -99,10 +99,11 @@ displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1512x982 hz:120 color
 [Reddit Tread About](https://www.reddit.com/r/Nix/comments/11ynxa5/every_macos_update_needs_me_to_rerun_the_nix/) has a discussion. Starting up the nix-daemon worked for me.
 
 ```sh
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; 
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
 then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 ```
+
 May add this to my zshrc.
 
