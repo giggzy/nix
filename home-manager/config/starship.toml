@@ -37,6 +37,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [docker_context]
+disabled = true
 format = '\[[$symbol$context]($style)\]'
 
 [elixir]
