@@ -26,10 +26,11 @@ in
     alacritty
     pkgsUnstable.zellij
     tmux
+    # pkgsUnstable.direnv -- having trouble with this
     direnv
     fish
     zsh
-    starship
+    pkgsUnstable.starship
     tailspin  # colorize tail
 
     ##############################################
@@ -132,7 +133,7 @@ in
     fzf
     ripgrep
     ack
-    zoxide
+    pkgsUnstable.zoxide
     exa # ls alternative
     tree
     pkgsUnstable.lazygit # git TUI Tool
@@ -302,16 +303,20 @@ in
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    package = pkgsUnstable.starship;
+
   };
 
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
+    package = pkgsUnstable.zoxide;
   };
 
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
+    # package = pkgsUnstable.direnv;
   };
 
   programs.atuin = {
