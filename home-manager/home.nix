@@ -240,6 +240,12 @@ in
       command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
       eval "$(pyenv init -)"
 
+      # nvm (node version manager)
+    # I've installed via homebrew and manage node versions with nvm
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
       # Nix
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
