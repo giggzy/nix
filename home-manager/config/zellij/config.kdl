@@ -19,6 +19,10 @@ keybinds clear-defaults=false {
         bind "Alt p" { SwitchToMode "Pane"; }
         bind "Alt n" { SwitchToMode "Resize"; }
         bind "Alt o" { SwitchToMode "Session"; }
+
+        // New keybindings for session switching .. not sure there is command to switch to next or previous session.
+        // bind "Ctrl Left" { GoToPreviousSession; }
+        // bind "Ctrl Right" { GoToNextSession; }
     }
 }
 
