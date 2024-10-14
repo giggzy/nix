@@ -130,7 +130,7 @@ in
     btop # visual system viewer
     zip
     unzip
-    fzf
+    pkgsUnstable.fzf
     ripgrep
     ack
     pkgsUnstable.zoxide
@@ -219,6 +219,11 @@ in
       # functions
       ${builtins.readFile ./zsh/functions.zsh}
 
+      # Homebrew completions setup
+      if type brew &>/dev/null; then
+        FPATH="$(brew --prefix)/share/zsh/site-functions:''${FPATH}"
+      fi
+
       # completion
       autoload -U +X bashcompinit && bashcompinit
       autoload -Uz compinit && compinit
@@ -242,7 +247,7 @@ in
       eval "$(pyenv init -)"
 
       # nvm (node version manager)
-    # I've installed via homebrew and manage node versions with nvm
+      # I've installed via homebrew and manage node versions with nvm
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -298,6 +303,7 @@ in
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    package = pkgsUnstable.fzf;
   };
 
   programs.starship = {
