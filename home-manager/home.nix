@@ -206,6 +206,11 @@ in
     enableCompletion = true;
     enableSyntaxHighlighting = true;
 
+    initExtraFirst = ''
+        # Profiling
+        # zmodload zsh/zprof # useful for debugging slow shell startup
+    '';
+
     initExtra = ''
       bindkey '^ ' autosuggest-accept
       # vim binding mode
@@ -225,11 +230,13 @@ in
       fi
 
       # completion
-      autoload -U +X bashcompinit && bashcompinit
-      autoload -Uz compinit && compinit
+      # autoload -U +X bashcompinit && bashcompinit
+      # autoload -Uz compinit && compinit
+      autoload -Uz compinit
+      compinit -C
 
-      complete -C aws_completer aws
-      complete -o nospace -C terraform terraform
+      # complete -C aws_completer aws
+      # complete -o nospace -C terraform terraform
 
       # Setup CDPATH
       cdpath=(. ~ ~/workspace ~/workspace/repos ~/workspace/giggzy_github .. )
@@ -249,13 +256,21 @@ in
       # nvm (node version manager)
       # I've installed via homebrew and manage node versions with nvm
       export NVM_DIR="$HOME/.nvm"
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+      nvm() {
+        # Lazy load nvm as it's slow
+        unset -f nvm
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        nvm "@"
+      }
 
 
       # Nix
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
       fi
+
+    # Profiling - useful for debugging slow shell startup
+      # zprof
     '';
 
     shellAliases = import ./zsh/aliases.zsh;
