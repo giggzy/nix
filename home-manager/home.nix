@@ -131,8 +131,13 @@ in
     zip
     unzip
     pkgsUnstable.fzf
+
+    # search tools
     ripgrep
     ack
+    pkgsUnstable.silver-searcher
+    pkgsUnstable.ast-grep
+
     pkgsUnstable.zoxide
     exa # ls alternative
     tree
