@@ -176,7 +176,7 @@ in
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true; # This is failing for me in wsl on windows right now?
+  #programs.home-manager.enable = true; # This is failing for me in wsl on windows right now?
   programs.git = {
     enable = true;
     userName = "Farrell, Gabriel";
