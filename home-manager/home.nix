@@ -24,6 +24,7 @@ in
 
     #iterm2 # Mac Only?
     alacritty
+    # (import ./pkgs { inherit pkgs; }).zellij
     pkgsUnstable.zellij
     tmux
     # pkgsUnstable.direnv -- having trouble with this
