@@ -69,7 +69,8 @@ theme "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
-default_mode "normal"
+// default_mode "normal"
+default_mode "locked"
 
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could
