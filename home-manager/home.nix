@@ -32,7 +32,7 @@ in
     fish
     zsh
     pkgsUnstable.starship
-    tailspin  # colorize tail
+    # tailspin  # colorize tail
 
     ##############################################
     # MCIT
@@ -62,12 +62,12 @@ in
     # python3Packages.pylsp-mypy
     python3Packages.pytest
     python3Packages.python-lsp-server
-    python3Packages.oracledb
+    # python3Packages.oracledb
     #python3Packages.pylsp-mypy
     mypy
     pipenv
     pre-commit
-    poetry
+    # poetry
 
     # rust
     # pkgsUnstable.cargo
@@ -118,7 +118,7 @@ in
     helix # editor with intresting modal model
     hexyl # hex viewer
     glow # markdown viewer
-    frogmouth # markdown viewer
+    # frogmouth # markdown viewer
 
     ##############################################
     # cli tools
@@ -158,7 +158,7 @@ in
     tokei # stats on a code base
     tldr
     visidata # spreadsheet for csv, json, etc
-    postgresql_15 # It was picking up an older version of postgresql but this got me 15
+    # postgresql_15 # It was picking up an older version of postgresql but this got me 15
     pgcli # postgresql cli with autocomplete
     graphviz # visualization tool
     delta  # git diff tool
@@ -255,9 +255,9 @@ in
       export PATH=/opt/homebrew/sbin:$PATH
 
       # PyEnv
-      export PYENV_ROOT="$HOME/.pyenv"
-      command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-      eval "$(pyenv init -)"
+      # export PYENV_ROOT="$HOME/.pyenv"
+      # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+      # eval "$(pyenv init -)"
 
       # nvm (node version manager)
       # I've installed via homebrew and manage node versions with nvm
