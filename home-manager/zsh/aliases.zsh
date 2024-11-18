@@ -12,16 +12,18 @@
   cat = "bat";
 
   # Neovim shell aliases
+  xnvim="NVIM_APPNAME=nvim_apps/lazynvim nvim";
+  lvim-lazy="NVIM_APPNAME=nvim_apps/lazynvim nvim";
   avim = "NVIM_APPNAME=nvim_apps/astro nvim";
   luvim = "NVIM_APPNAME=nvim_apps/LunarVim nvim";
   # lvim = "NVIM_APPNAME=nvim_apps/lazynvim /opt/homebrew/bin/nvim";
 
   #
   # TODO: fix broken config
-  nvim-lazy="NVIM_APPNAME=lazynvim nvim";
-  nvim-kick="NVIM_APPNAME=kickstart nvim";
-  nvim-chad="NVIM_APPNAME=NvChad nvim";
-  nvim-astro="NVIM_APPNAME=AstroNvim nvim";
+  nvim-lazy="NVIM_APPNAME=nvim_apps/lazynvim nvim";
+  nvim-kick="NVIM_APPNAME=nvim_apps/kickstart nvim";
+  nvim-chad="NVIM_APPNAME=nvim_apps/NvChad nvim";
+  nvim-astro="NVIM_APPNAME=nvim_apps/AstroNvim nvim";
   # End TODO
 
   reload = "exec zsh -l"; # relaunch zsh and login
