@@ -31,4 +31,6 @@
   # Nix
   xx = "home-manager switch && reload";
 
+  # Docker
+  docker="podman";
 }
