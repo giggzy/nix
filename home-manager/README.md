@@ -22,7 +22,10 @@ ln -s `pwd`/home.nix ~/.config/home-manager/
 #### Run the installer
 
 ```sh
+
 nix-shell '<home-manager>' -A install
+# or
+nix-env -iA nixpkgs.home-manager
 ```
 
 Note an alias _xx_ is created that switches to the new configuration and initializes the zsh.
