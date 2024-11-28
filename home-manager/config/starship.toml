@@ -34,43 +34,19 @@ format = '\[[⏱ $duration]($style)\]'
 
 [conda]
 format = '\[[$symbol$environment]($style)\]'
-
-[crystal]
-disabled = true
-format = '\[[$symbol($version)]($style)\]'
-
-[dart]
-format = '\[[$symbol($version)]($style)\]'
-
 [docker_context]
 disabled = true
 format = '\[[$symbol$context]($style)\]'
-
-[elixir]
-format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
-
-[elm]
-format = '\[[$symbol($version)]($style)\]'
-
-[erlang]
-format = '\[[$symbol($version)]($style)\]'
-
-[gcloud]
-format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
 format = '\[[$symbol$branch]($style)\]'
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style))'
+ # format = '([\[$all_status$ahead_behind\]]($style))'
+format = '([\[$staged$modified$untracked$renamed$deleted$ahead_behind\]]($style))'
+
 
 [golang]
-format = '\[[$symbol($version)]($style)\]'
-
-[haskell]
-format = '\[[$symbol($version)]($style)\]'
-
-[helm]
 format = '\[[$symbol($version)]($style)\]'
 
 [java]
@@ -97,12 +73,6 @@ format = '\[[$symbol($version)]($style)\]'
 [package]
 format = '\[[$symbol$version]($style)\]'
 
-[perl]
-format = '\[[$symbol($version)]($style)\]'
-
-[php]
-format = '\[[$symbol($version)]($style)\]'
-
 [python]
 # format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 format = '\[[ ${version}\($virtualenv\)]($style)\]'
@@ -114,17 +84,11 @@ format = '\[[$symbol($version)]($style)\]'
 [rust]
 format = '\[[$symbol($version)]($style)\]'
 
-[scala]
-format = '\[[$symbol($version)]($style)\]'
-
 [sudo]
 disabled = false
 symbol = ' 👩 '
 style = 'green'
 # format = '\[[as $symbol]($style)\]'
-
-[swift]
-format = '\[[$symbol($version)]($style)\]'
 
 [terraform]
 format = '\[[$symbol$workspace]($style)\]'
@@ -133,6 +97,3 @@ format = '\[[$symbol$workspace]($style)\]'
 disabled = true
 format = '\[[$user]($style)\]'
 
-[vagrant]
-disabled = true
-format = '\[[$symbol($version)]($style)\]'
